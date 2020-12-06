@@ -1,0 +1,98 @@
+html{
+    height: 100%;
+}
+
+body {
+    display: grid;
+    background-color: white;
+    color: #27213C;
+    min-height: 100%;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 0fr 1fr 0fr;
+    grid-template-areas: 
+    "header header header"
+    "aside content content"
+    "footer footer footer";
+    grid-gap: 5px;
+}
+
+h2{
+    padding: 0.2em;
+}
+
+header {
+    background-color: #b1e5f2;
+    text-align: center;
+    grid-area: header;
+}
+
+aside {
+    background-color: #CECECE;
+    grid-area: aside;
+}
+main, form {
+    height: 100%;
+    background-color: #A6A6A8;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(6, 0.2fr);
+    grid-template-rows: 0fr 1fr 0fr;
+    grid-template-areas: 
+    "button1 . . . . button2"
+    "input input input input input input"
+    " . . button3 button4 . .";
+}
+
+button{
+    color:white;
+    border-radius: 8px;
+    padding: 1em;
+    border-width: 0px;
+    margin: 10%;
+    place-self: center;
+}
+
+#new-note, #save{
+    background-color: #5d997c;
+}
+#new-note{
+    grid-area: button1;
+}
+#change-theme{
+    background-color: #696969;
+    grid-area: button2;
+}
+#save{
+    grid-area: button3;
+    justify-self: end;
+}
+#cancel{
+    background-color: #d43b15;
+    grid-area: button4;
+    justify-self: start;
+}
+
+#note_input{
+    grid-area: input;
+    place-self: center;
+    width: 85%;
+    height: 85%;
+    border-radius: 12px;
+    border-width: 0px;
+    resize: none;
+    padding: 1em;
+}
+
+footer {
+    background-color: #E8E9F3;
+    text-align: center;
+    grid-area: footer;
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    justify-content: center
+}
