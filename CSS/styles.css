@@ -16,7 +16,6 @@ body {
     grid-gap: 5px;
 }
 
-
 h2{
     padding: 0.2em;
 }
@@ -115,11 +114,9 @@ body.dark-mode{
 }
 aside.dark-mode{
     background-color: #414141;
-
 }
 #new-note.dark-mode, #save.dark-mode{
     background-color: #184731;
-
 }
 #cancel.dark-mode{
     background-color: #75210c;
@@ -130,7 +127,37 @@ aside.dark-mode{
 .dark-mode{
     color: #fff;
 }
-li{
+span{
     text-decoration: underline;
     cursor: pointer;
+}
+@media screen and (max-width: 800px){
+    main{
+        grid-area: content;
+    }
+    form {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "button1 . button2"
+        "input input input"
+        "button3 . button4";
+    }
+    body{
+        grid-template-rows: 0fr 1fr 0fr 0fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "content"
+        "aside"
+        "footer";
+    }
+    aside li{
+        padding: 1.2vh;
+        margin: 0.2vh;
+    }
+    li span{
+        padding: 0.8vh;
+        border-style: solid;
+        border-radius: 1px;
+    }
 }
