@@ -16,9 +16,6 @@ body {
     grid-gap: 5px;
 }
 
-header.dark-mode{
-    background-color: black;
-}
 
 h2{
     padding: 0.2em;
@@ -99,4 +96,37 @@ footer ul{
     display: flex;
     padding: 0px;
     justify-content: center
+}
+header.dark-mode{
+    background-color: #0c4655;
+}
+footer.dark-mode{
+    background-color: #0c4655;
+}
+textarea.dark-mode{
+    background-color: darkslategray;
+    color: white;
+}
+form.dark-mode{
+    background-color: #272727;
+}
+body.dark-mode{
+    background-color: black;
+}
+aside.dark-mode{
+    background-color: #414141;
+
+}
+#new-note.dark-mode, #save.dark-mode{
+    background-color: #184731;
+
+}
+#cancel.dark-mode{
+    background-color: #75210c;
+}
+#change-theme.dark-mode{
+    background-color:#363636;
+}
+.dark-mode{
+    color: #fff;
 }

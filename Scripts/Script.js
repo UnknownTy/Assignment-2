@@ -11,6 +11,8 @@ theme_button.onclick = function(){
         'Button',
         'body',
         'footer',
+        'main',
+        'form',
     ]
     for (element in dark_elements){
         var tags = document.getElementsByTagName(dark_elements[element])
@@ -19,6 +21,9 @@ theme_button.onclick = function(){
             tags[i].classList.toggle("dark-mode")
         }
     }
-    
-    alert("Button was clicked")
+    if (theme_button.innerText === 'Dark Theme'){
+        theme_button.innerText = 'Light Theme'
+    } else{
+        theme_button.innerText = 'Dark Theme'
+    }
 }
