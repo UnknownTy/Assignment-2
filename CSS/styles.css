@@ -16,6 +16,10 @@ body {
     grid-gap: 5px;
 }
 
+header.dark-mode{
+    background-color: black;
+}
+
 h2{
     padding: 0.2em;
 }
