@@ -45,3 +45,19 @@ new_button.onclick = function(){
         text_area.value = ""; // Clears the text_area
     }
 }
+let notesArray = [
+    {title:"Note One", body:"some text 1"},
+    {title:"Note Two", body:"some text 2"},
+]
+
+document.querySelector('ul').addEventListener('click', function(e){
+    var target_text = e.target.innerText
+    for(i in notesArray){
+        if(notesArray[i]['title'] === target_text){
+            text_area.value = target_text + "\n" + notesArray[i]['body']
+            break; // Break as we know we've found our note.
+        } 
+    }
+    
+})
+populate_notes(notesArray)

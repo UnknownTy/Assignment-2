@@ -130,3 +130,7 @@ aside.dark-mode{
 .dark-mode{
     color: #fff;
 }
+li{
+    text-decoration: underline;
+    cursor: pointer;
+}
