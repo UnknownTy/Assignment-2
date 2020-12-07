@@ -50,14 +50,38 @@ let notesArray = [
     {title:"Note Two", body:"some text 2"},
 ]
 
+save_button.onclick = function(){
+    var text = text_area.value.split('\n')
+    var title_text = text[0]
+    text.splice(0, 1)
+    var body_text = text.join('\n')
+    let found = false
+    for(i in notesArray){
+        if (notesArray[i]['title'] === title_text){
+            notesArray[i]['body'] = body_text
+            found = true
+            break;
+        }
+    }
+    if(!found){
+        notesArray.push(
+            {title: title_text,
+             body:  body_text})
+        document.querySelector('ul').insertAdjacentHTML("beforeend",`\
+        <li>${notesArray[notesArray.length - 1]['title']}</li>`)
+    }
+}
+
 document.querySelector('ul').addEventListener('click', function(e){
     var target_text = e.target.innerText
     for(i in notesArray){
         if(notesArray[i]['title'] === target_text){
             text_area.value = target_text + "\n" + notesArray[i]['body']
+            text_area.toggleAttribute('hidden', false)
+            cancel_button.toggleAttribute('hidden', false)
+            save_button.toggleAttribute('hidden', false)
             break; // Break as we know we've found our note.
         } 
     }
     
 })
-populate_notes(notesArray)
